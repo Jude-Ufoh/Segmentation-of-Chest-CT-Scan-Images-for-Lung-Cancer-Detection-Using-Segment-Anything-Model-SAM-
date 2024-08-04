@@ -44,7 +44,9 @@ Altogether, there are 1000 images.
                   color_mask = np.concatenate([np.random.random(3), [0.35]])
                   img[m] = color_mask
               ax.imshow(img)
-   ![Alt text](/posts/path/to/img.jpg "Optional title")
+
+   ![Automatic image](https://github.com/user-attachments/assets/b30aaf4c-0e07-4e2a-a22b-1fe3a419d5a8)
+
    - **Prompt-based Mask Generation**:
      This is a method that involves the use of input prompts to segment specific regions of
 interest in an image
@@ -68,9 +70,17 @@ interest in an image
               x0, y0 = box[0], box[1]
               w, h = box[2] - box[0], box[3] - box[1]
               ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0,0,0,0), lw=2))
+   ![prompt image](https://github.com/user-attachments/assets/f48404ed-7630-497f-b263-1bdad9221534)
+
    - **Interface-based Mask Generation**
      This is a User-Interface (UI) version of the SAM. For now, the interface is hosted on the
 SAM website [here](https://segment-anything.com/demo). It allows users to upload an image into
 the platform and the platform applies the SAM model in the background. Depending on
 the users need, this model can apply multiple or specific masks on the image. There are
 three ways of creating masks using this method.
+3. The third step is the use of the extracted images to build a classification model in Convolutional Neural Networt (CNN).
+## Result
+Results
+show that SAM model was able to segment out the lung region and performed very well
+in terms of stability score and IoU in the segmentation process. Accuracy of 93% was
+achieved with the CNN classifier using VGG16 model architecture. 
